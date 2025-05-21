@@ -1,0 +1,10 @@
+.museum-card {
+  border: 5px solid #f58220;
+  border-radius: 32px;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 16px;
+  background: #fff;
+} 
