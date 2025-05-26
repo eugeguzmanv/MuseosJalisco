@@ -1,0 +1,22 @@
+.footer {
+  width: 100vw;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 40px;
+  padding: 0;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.footer-img {
+  width: 100vw;      /* Full width of viewport */
+  height: auto;      /* Proportional height */
+   /* Or any value you prefer */
+  display: block;
+  object-fit: contain; /* Ensures the whole image is visible */
+}

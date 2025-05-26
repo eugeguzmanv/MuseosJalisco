@@ -1,10 +1,60 @@
 .museum-card {
+  font-family: 'Montserrat', Arial, sans-serif;
   border: 5px solid #f58220;
   border-radius: 32px;
-  padding: 40px 0;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #222;
+  padding: 24px;
   margin-bottom: 16px;
   background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.museum-image {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  align-self: center;
+}
+
+.museum-title {
+  font-size: 1.5rem;
+  margin: 0 0 12px 0;
+  color: #222;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.museum-info {
+  margin-bottom: 6px;
+}
+
+.museum-label {
+  color: #e6007e;
+  font-weight: bold;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.museum-data {
+  color: #222;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.museum-more {
+  margin-top: 16px;
+  background: #e6007e;
+  color: #fff;
+  border: none;
+  border-radius: 18px;
+  padding: 8px 20px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+.museum-more:hover {
+  background: #c2006a;
 } 
