@@ -1,20 +1,21 @@
 import React from "react";
 import "./MuseumCard.css";
-import mapIcon from "../assets/mapIcon.jpg"; // Placeholder image
 
 const MuseumCard = ({
-  nombre = "Museo Ejemplo",
-  categoria = "Arte",
-  fundacion = "1990",
-  administracion = "Pública",
-  municipio = "Guadalajara",
-  localidad = "Centro",
-  direccion = "Calle Falsa 123",
-  telefono = "123-456-7890",
-  correo = "info@museo.com"
+  nombre,
+  categoria,
+  fundacion,
+  administracion,
+  municipio,
+  localidad,
+  direccion,
+  telefono,
+  correo,
+  imagen,
+  linkSic
 }) => (
   <div className="museum-card">
-    <img src={mapIcon} alt="Museo" className="museum-image" />
+    <img src={imagen} alt={nombre} className="museum-image" />
     <h2 className="museum-title">{nombre}</h2>
     <div className="museum-info">
       <span className="museum-label">Categoría: </span>
@@ -48,7 +49,14 @@ const MuseumCard = ({
       <span className="museum-label">Correo electrónico: </span>
       <span className="museum-data">{correo}</span>
     </div>
-    <button className="museum-more">Ver más información</button>
+    <a
+      className="museum-more"
+      href={linkSic}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Ver más información
+    </a>
   </div>
 );
 

@@ -3,14 +3,14 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
-import museumIconUrl from '../assets/mapSymbol.PNG';
+import museumIconUrl from '../assets/museumIcon.PNG';
 import shadowUrl from 'leaflet/dist/images/marker-shadow.png';
 import './MapView.css';
 
 
 const museumIcon = L.icon({
   iconUrl: museumIconUrl,
-  iconSize: [48, 48], // Adjust size as needed
+  iconSize: [40, 40], // Adjust size as needed
   iconAnchor: [24, 48], // Point of the icon which will correspond to marker's location
   popupAnchor: [0, -48], // Point from which the popup should open relative to the iconAnchor
   shadowUrl: null,

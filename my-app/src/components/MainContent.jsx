@@ -1,35 +1,46 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import FilterBar from "./FilterBar";
 import MuseumCard from "./MuseumCard";
 import MapView from "./MapView";
 import { supabase } from "../supabaseClient";
 import "./MainContent.css";
 
-const museums = [
-  { id: 1, name: "Museo 1" },
-  { id: 2, name: "Museo 2" },
-  { id: 3, name: "Museo 3" },
-  { id: 4, name: "Museo 4" },
-];
-
 function MainContent({ filters, setFilters }) {
+  const [museums, setMuseums] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    async function fetchMuseums() {
+    async function fetchMuseos() {
+      setLoading(true);
       const { data, error } = await supabase
-        .from('Museos') // replace with your table name
+        .from('Museos')
         .select('*');
       if (error) {
         console.error(error);
       } else {
-        console.log("Museums from Supabase:", data);
+        setMuseums(data);
       }
+      setLoading(false);
     }
-    fetchMuseums();
+    fetchMuseos();
   }, []);
 
-  const markers = [
-    { lat: 20.6597, lng: -103.3496, title: "Guadalajara", description: "Centro" }
-  ];
+  // Prepare markers for the map
+  const markers = museums.map(museum => ({
+    lat: museum.latitud,
+    lng: museum.longitud,
+    title: museum.nombre,
+    description: museum.categoria,
+    id: museum.idMuseo
+  }));
+
+  if (loading) {
+    return (
+      <div className="main-content">
+        <div className="loading-spinner">Cargando museos...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="main-content">
@@ -37,7 +48,20 @@ function MainContent({ filters, setFilters }) {
       <FilterBar filters={filters} setFilters={setFilters} />
       <div className="museum-grid">
         {museums.map((museum) => (
-          <MuseumCard key={museum.id} name={museum.name} />
+          <MuseumCard
+            key={museum.idMuseo}
+            nombre={museum.nombre}
+            categoria={museum.categoria}
+            fundacion={museum.fecha_fundacion}
+            administracion={museum.administracion}
+            municipio={museum.municipio}
+            localidad={museum.localidad}
+            direccion={`${museum.calle_numero}, ${museum.colonia}, ${museum.cp}`}
+            telefono={museum.telefono}
+            correo={museum.email}
+            imagen={museum.direccion_imagen}
+            linkSic={museum.link_sic}
+          />
         ))}
       </div>
     </div>
