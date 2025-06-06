@@ -1,9 +1,206 @@
 .filter-bar {
   border: 3px solid #e6007e;
   border-radius: 24px;
-  padding: 16px 0;
+  padding: 16px 32px;
   text-align: center;
-  font-size: 1.2rem;
-  color: #222;
+  font-family: 'Montserrat', Arial, sans-serif;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
   margin-bottom: 8px;
+  background: #fff;
+  flex-wrap: wrap;
+}
+
+.filter-bar > div:not(.filter-buttons) {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-direction: column;
+}
+
+.filter-section .filter-label {
+  margin-right: 0;
+}
+
+.filter-section > *:not(.filter-chips) {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-section .filter-select {
+  margin-right: 0;
+}
+
+.filter-label {
+  color: #e6007e;
+  font-weight: 700;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.filter-select {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  border: 2px solid #e6007e;
+  border-radius: 12px;
+  padding: 6px 16px;
+  outline: none;
+  color: #222;
+  background: #fff;
+  transition: border 0.2s;
+  min-width: 180px;
+  min-height: 40px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: #f58220;
+}
+
+.filter-search-btn {
+  background: #e6007e;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 24px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 0;
+}
+
+.filter-search-btn:hover {
+  background: #c2006a;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.filter-chip {
+  background: #e6007e;
+  color: #fff;
+  border-radius: 16px;
+  padding: 4px 12px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filter-chip button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1em;
+  margin-left: 4px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.filter-select .react-select__control {
+  min-width: 180px;
+  min-height: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid #e6007e;
+  box-shadow: none;
+}
+
+.filter-select .react-select__value-container {
+  padding: 2px 8px;
+}
+
+.filter-select .react-select__indicators {
+  height: 40px;
+}
+
+.filter-select .react-select__placeholder {
+  color: #bbb;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.filter-select .react-select__multi-value,
+.filter-select .react-select__multi-value__label,
+.filter-select .react-select__multi-value__remove,
+.filter-select .react-select__multi-value__container {
+  display: none !important;
+}
+
+.filter-select .react-select__option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.filter-select .react-select__menu {
+  z-index: 9999;
+  border-radius: 12px;
+  position: absolute;
+  background-color: #fff;
+  overflow: visible;
+}
+
+.filter-select .react-select__menu-list {
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+  background-color: #fff;
+  padding: 8px 0;
+  display: block;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  min-width: 500px;
+}
+
+.filter-clear-btn,
+.filter-show-all-btn,
+.filter-search-btn {
+  flex: 0 0 auto;
+  width: 180px;
+  white-space: nowrap;
+  text-align: center;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 8px 24px;
+  transition: all 0.2s;
+}
+
+.filter-clear-btn {
+  background: #fff;
+  color: #e6007e;
+  border: 2px solid #e6007e;
+}
+
+.filter-clear-btn:hover {
+  background: #fff5f9;
+}
+
+.filter-show-all-btn {
+  background: #f58220;
+  color: #fff;
+  border: none;
+}
+
+.filter-show-all-btn:hover {
+  background: #e67300;
 } 

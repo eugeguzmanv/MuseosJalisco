@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [filters, setFilters] = useState({});
 
   useEffect(() => {
     // Simulate loading for demo; replace with real loading logic
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
       <LoadingBar loading={loading} />
       <Header />
-      <MainContent />
+      <MainContent filters={filters} setFilters={setFilters} />
       <Footer />
     </div>
   );

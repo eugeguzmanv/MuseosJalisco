@@ -1,6 +1,6 @@
 .map-container {
   width: 650px;           /* Adjust width as needed */
-  height: 400px;          /* Adjust height as needed */
+  height: 1000px;          /* Adjust height as needed */
   border-radius: 18px;    /* Rounded corners */
   overflow: hidden;       /* Ensures the map corners are rounded */
   margin: 0;              /* No extra margin */
