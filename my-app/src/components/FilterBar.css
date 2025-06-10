@@ -1,15 +1,17 @@
 .filter-bar {
-  border: 3px solid #e6007e;
+  /* Remove the pink border */
+  /* border: 3px solid #e6007e; */
   border-radius: 24px;
   padding: 16px 32px;
   text-align: center;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
   display: flex;
   gap: 24px;
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 8px;
   background: #fff;
+  box-shadow: 0 8px 16px rgba(230, 0, 126, 0.3); /* More noticeable pink shadow */
   flex-wrap: wrap;
 }
 
@@ -39,11 +41,11 @@
 .filter-label {
   color: #e6007e;
   font-weight: 700;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
 }
 
 .filter-select {
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 1rem;
   border: 2px solid #e6007e;
   border-radius: 12px;
@@ -63,21 +65,22 @@
 }
 
 .filter-search-btn {
-  background: #e6007e;
-  color: #fff;
-  border: none;
+  background: #f5f5f5; /* Updated background color */
+  color: #e6007e;
+  border: none; /* Remove border */
   border-radius: 12px;
   padding: 8px 24px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all 0.2s;
   margin-left: 0;
 }
 
 .filter-search-btn:hover {
-  background: #c2006a;
+  background: #e6007e; /* Pink hover */
+  color: #fff;
 }
 
 .filter-chips {
@@ -92,7 +95,7 @@
   color: #fff;
   border-radius: 16px;
   padding: 4px 12px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
@@ -128,7 +131,7 @@
 
 .filter-select .react-select__placeholder {
   color: #bbb;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
 }
 
 .filter-select .react-select__multi-value,
@@ -165,8 +168,10 @@
   display: flex;
   gap: 12px;
   align-items: flex-start;
+  justify-content: flex-start;
   flex-shrink: 0;
-  min-width: 500px;
+  width: 100%;
+  margin-top: auto;
 }
 
 .filter-clear-btn,
@@ -176,31 +181,36 @@
   width: 180px;
   white-space: nowrap;
   text-align: center;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   border-radius: 12px;
   padding: 8px 24px;
   transition: all 0.2s;
+  background: #f5f5f5; /* Updated background color */
+  border: none; /* Remove border */
+  box-shadow: 0 8px 16px rgba(230, 0, 126, 0.3); /* Pink shadow */
 }
 
 .filter-clear-btn {
-  background: #fff;
+  background: #f5f5f5; /* Updated background color */
   color: #e6007e;
-  border: 2px solid #e6007e;
+  border: none; /* Remove border */
 }
 
 .filter-clear-btn:hover {
-  background: #fff5f9;
+  background: #e6007e; /* Pink hover */
+  color: #fff;
 }
 
 .filter-show-all-btn {
-  background: #f58220;
-  color: #fff;
-  border: none;
+  background: #f5f5f5; /* Updated background color */
+  color: #f58220;
+  border: none; /* Remove border */
 }
 
 .filter-show-all-btn:hover {
-  background: #e67300;
+  background: #f58220; /* Orange hover */
+  color: #fff;
 } 

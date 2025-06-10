@@ -4,5 +4,23 @@
   border-radius: 18px;    /* Rounded corners */
   overflow: hidden;       /* Ensures the map corners are rounded */
   margin: 0;              /* No extra margin */
-  background: #f5f5f5;    /* fallback background */
+  background: #FFFFFF;    /* White background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Add styles for the "Ver museo" button inside the marker popup */
+.view-museum-btn {
+  background-color: #c2006a; /* magenta */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.view-museum-btn:hover {
+  background-color: #a0005a; /* darker magenta */
 }

@@ -1,20 +1,45 @@
+@font-face {
+  font-family: 'Anaheim';
+  src: url('../assets/fonts/Anaheim-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Anaheim-Regular.ttf') format('truetype'); /* Include .ttf as a fallback */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('../assets/fonts/Archivo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 .museum-card {
-  font-family: 'Montserrat', Arial, sans-serif;
-  border: 5px solid #f58220;
+  font-family: 'Anaheim', sans-serif;
+ 
   border-radius: 32px;
   padding: 24px;
   margin-bottom: 16px;
   background: #fff;
+  box-shadow: 0 8px 16px rgba(245, 130, 32, 0.3); /* More noticeable orange shadow */
   width: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for hover */
+}
+
+.museum-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 12px 24px rgba(245, 130, 32, 0.4); /* Slightly larger and more opaque shadow on hover */
 }
 
 .museum-image {
   width: 100%;
   max-width: 320px;
+  height: 200px; /* Fixed height for all images */
+  object-fit: cover; /* Ensures images cover the area without stretching, cropping if necessary */
+  overflow: hidden; /* Hides the cropped parts of the image */
   border-radius: 16px;
   margin-bottom: 16px;
   align-self: center;
@@ -24,7 +49,7 @@
   font-size: 1.5rem;
   margin: 0 0 12px 0;
   color: #222;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Archivo', sans-serif;
 }
 
 .museum-info {
@@ -33,13 +58,13 @@
 
 .museum-label {
   color: #e6007e;
-  font-weight: bold;
-  font-family: 'Montserrat', Arial, sans-serif;
+  
+  font-family: 'Anaheim', sans-serif;
 }
 
 .museum-data {
   color: #222;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Anaheim', sans-serif;
 }
 
 .museum-more {
@@ -49,7 +74,7 @@
   border: none;
   border-radius: 18px;
   padding: 8px 20px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  font-family: 'Anaheim', sans-serif;
   font-size: 1rem;
   cursor: pointer;
   align-self: flex-end;
@@ -57,4 +82,21 @@
 }
 .museum-more:hover {
   background: #c2006a;
+}
+
+/* Add highlight animation for when a museum card is scrolled to */
+@keyframes highlight-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 0, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 255, 0);
+  }
+}
+
+.museum-card.highlight-museum {
+  animation: highlight-pulse 2s ease-out;
 } 

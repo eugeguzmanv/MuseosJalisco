@@ -51,7 +51,7 @@ const FilterBar = ({ filters, setFilters, onSearch }) => {
 
   const handleShowAll = () => {
     setFilters({ categoria: [], municipio: [] });
-    onSearch(); // Trigger search with empty filters
+    onSearch(); // Trigger search with empty filters, now it will be appliedFilters
   };
 
   return (
@@ -108,7 +108,7 @@ const FilterBar = ({ filters, setFilters, onSearch }) => {
           Ver todos
         </button>
         <button className="filter-search-btn" onClick={onSearch}>
-          Buscar
+          Aplicar filtros
         </button>
       </div>
     </div>
