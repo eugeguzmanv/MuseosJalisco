@@ -8,6 +8,14 @@
 }
 
 @font-face {
+  font-family: 'Anaheim';
+  src: url('./assets/fonts/Anaheim-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Anaheim-Regular.ttf') format('truetype'); /* Include .ttf as a fallback */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Archivo';
   src: url('./assets/fonts/Archivo-Regular.ttf') format('truetype');
   font-weight: 400;
@@ -28,4 +36,20 @@ body {
 .App {
   margin: 0;
   padding: 0;
+}
+
+/* Mobile responsive base styles */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Slightly smaller base font for mobile */
+  }
+  
+  body {
+    -webkit-text-size-adjust: 100%; /* Prevent text scaling on iOS */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
+  
+  * {
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
 } 

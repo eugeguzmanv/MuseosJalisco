@@ -74,9 +74,7 @@ function MainContent({ appliedFilters = {}, filters, setFilters, onApplyFilters 
     return <div className="loading-spinner">Cargando...</div>;
   }
 
-  if (!loading && museums.length === 0) {
-    return <div className="no-results">Ningún resultado coincide con la búsqueda</div>;
-  }
+  // Don't return early - always show the main content structure
 
   return (
     <div className="main-content">
@@ -97,25 +95,32 @@ function MainContent({ appliedFilters = {}, filters, setFilters, onApplyFilters 
         setFilters={setFilters}
         onSearch={onApplyFilters}
       />
-      <div className="museum-grid">
-        {museums.map((museum) => (
-          <MuseumCard
-            key={museum.idMuseo}
-            id={`museum-${museum.idMuseo}`}
-            nombre={museum.nombre}
-            categoria={museum.categoria}
-            fundacion={museum.fecha_fundacion}
-            administracion={museum.administracion}
-            municipio={museum.municipio}
-            localidad={museum.localidad}
-            direccion={`${museum.calle_numero}, ${museum.colonia}, ${museum.cp}`}
-            telefono={museum.telefono}
-            correo={museum.email}
-            imagen={museum.direccion_imagen}
-            linkSic={museum.link_sic}
-          />
-        ))}
-      </div>
+      
+      {museums.length === 0 ? (
+        <div className="no-results-message">
+          Ningún resultado coincide con tu búsqueda. Intenta modificar los filtros
+        </div>
+      ) : (
+        <div className="museum-grid">
+          {museums.map((museum) => (
+            <MuseumCard
+              key={museum.idMuseo}
+              id={`museum-${museum.idMuseo}`}
+              nombre={museum.nombre}
+              categoria={museum.categoria}
+              fundacion={museum.fecha_fundacion}
+              administracion={museum.administracion}
+              municipio={museum.municipio}
+              localidad={museum.localidad}
+              direccion={`${museum.calle_numero}, ${museum.colonia}, ${museum.cp}`}
+              telefono={museum.telefono}
+              correo={museum.email}
+              imagen={museum.direccion_imagen}
+              linkSic={museum.link_sic}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

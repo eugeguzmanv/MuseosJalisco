@@ -20,3 +20,10 @@
   display: block;
   object-fit: contain; /* Ensures the whole image is visible */
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 24px;
+  }
+}

@@ -35,6 +35,9 @@ const MapView = ({
         doubleClickZoom={true}
         dragging={true}
         zoomControl={true}
+        touchZoom={true}
+        tap={true}
+        closePopupOnClick={false}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
